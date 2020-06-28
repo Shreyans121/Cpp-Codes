@@ -50,6 +50,14 @@ void printkthLvl(node* root, int k) {
   printkthLvl(root -> right, k-1);
 }
 
+void printAllLvl(node* root) {
+  int h = height(root);
+  for(int i = 0; i<=h; i++) {
+    printkthLvl(root, i);
+    cout<<endl;
+  }
+}
+
 void print(node* root) {
   if(root == NULL) {
     return;
@@ -63,11 +71,12 @@ void print(node* root) {
 int main() {
   node* root = preOrder();
   print(root);
-  cout<<endl<<height(root);
-  cout<<endl;
-  int k;
-  cin>>k;
-  printkthLvl(root, k);
+  // cout<<endl<<height(root);
+  // cout<<endl;
+  // int k;
+  // cin>>k;
+  // printkthLvl(root, k);
+  printAllLvl(root);
 
   return 0;
 }
