@@ -43,14 +43,22 @@ int height(node* root) {
 void bfs(node* root, queue <node*> q) {
 
   while(!q.empty()) {
-    if(q.front() == NULL) {
+    node* p = q.front();
+    if(p == NULL) {
+      cout<<endl;
       q.pop();
-      continue;
+      if(!q.empty()) {
+        q.push(NULL);
+      }
     }
-    cout<<q.front() -> data<<" ";
-    q.push(q.front() -> left);
-    q.push(q.front() -> right);
-    q.pop();
+    else {
+      cout<<p -> data<<" ";
+      if(p -> left != NULL)
+        q.push(p -> left);
+      if(p -> right != NULL)
+        q.push(p -> right);
+      q.pop();
+    }
   }
 
 }
@@ -70,6 +78,7 @@ int main() {
 
   queue <node*> q;
   q.push(root);
+  q.push(NULL);
   bfs(root, q);
 
 
