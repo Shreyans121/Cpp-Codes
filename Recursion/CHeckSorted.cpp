@@ -17,6 +17,5 @@ int main() {
 
   for(int i = 0; i<n; i++)
     cin>>arr[i];
-
-  cout<<isSorted(arr, n);
+    cout<<isSorted(arr, n);
 }
