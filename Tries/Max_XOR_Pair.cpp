@@ -66,7 +66,7 @@ public:
 
     for(int i = 0; i<n; i++) {
       int val = input[i];
-      insert(val);;
+      insert(val);
       int current_xor = max_xor_helper(val);
       cout<<current_xor<<" ";
       max_xor = max(current_xor, max_xor);
